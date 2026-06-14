@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Client - MarketPlace Pro</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard-client.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="dashboard-navbar">
+        <div class="navbar-container">
+            <div class="logo" onclick="window.location.href='../index.html'">
+                <i class="fas fa-store"></i>
+                <span>MarketPlace Pro</span>
+            </div>
+            <div class="nav-search">
+                <input type="text" id="searchInput" placeholder="Rechercher des produits..." />
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="nav-items">
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <div class="user-menu">
+                    <div class="user-avatar" id="userAvatar">
+                        <img src="https://via.placeholder.com/40" alt="Avatar" />
+                    </div>
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="#profile"><i class="fas fa-user"></i> Mon Profil</a>
+                        <a href="#orders"><i class="fas fa-history"></i> Mes Commandes</a>
+                        <a href="#favorites"><i class="fas fa-heart"></i> Favoris</a>
+                        <a href="#settings"><i class="fas fa-cog"></i> Paramétres</a>
+                        <hr />
+                        <a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+        <div class="sidebar-menu">
+            <a href="#dashboard" class="menu-item active">
+                <i class="fas fa-home"></i>
+                <span>Accueil</span>
+            </a>
+            <a href="#products" class="menu-item">
+                <i class="fas fa-box"></i>
+                <span>Tous les Produits</span>
+            </a>
+            <a href="#categories" class="menu-item">
+                <i class="fas fa-list"></i>
+                <span>Catégories</span>
+            </a>
+            <a href="#orders" class="menu-item">
+                <i class="fas fa-shopping-bag"></i>
+                <span>Mes Commandes</span>
+            </a>
+            <a href="#favorites" class="menu-item">
+                <i class="fas fa-heart"></i>
+                <span>Favoris</span>
+            </a>
+            <a href="#messages" class="menu-item">
+                <i class="fas fa-envelope"></i>
+                <span>Messages</span>
+                <span class="badge">3</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="content-section active">
+            <div class="section-header">
+                <h1>Bienvenue <span id="userName">Client</span>!</h1>
+                <p>Explorez les meilleurs produits de nos fournisseurs</p>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon orders">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">5</div>
+                        <div class="stat-label">Commandes</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon spent">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">45,000</div>
+                        <div class="stat-label">Dépensé</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon favorites">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">12</div>
+                        <div class="stat-label">Favoris</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon returns">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">1</div>
+                        <div class="stat-label">Retours</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Vendors -->
+            <h2>Fournisseurs en Vedette</h2>
+            <div class="vendors-grid" id="vendorsGrid">
+                <!-- Dynamically populated -->
+            </div>
+
+            <!-- Featured Products -->
+            <h2>Produits en Vedette</h2>
+            <div class="products-grid" id="productsGrid">
+                <!-- Dynamically populated -->
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="content-section">
+            <div class="section-header">
+                <h1>Tous les Produits</h1>
+                <div class="filter-bar">
+                    <select id="categoryFilter">
+                        <option value="">Toutes les catégories</option>
+                        <option value="electronics">Électronique</option>
+                        <option value="fashion">Mode</option>
+                        <option value="home">Maison</option>
+                        <option value="food">Alimentation</option>
+                    </select>
+                    <select id="sortFilter">
+                        <option value="popularity">Populaire</option>
+                        <option value="price-low">Prix croissant</option>
+                        <option value="price-high">Prix décroissant</option>
+                        <option value="newest">Plus récent</option>
+                    </select>
+                </div>
+            </div>
+            <div class="products-grid-full" id="allProductsGrid">
+                <!-- Dynamically populated -->
+            </div>
+        </section>
+
+        <!-- Orders Section -->
+        <section id="orders" class="content-section">
+            <div class="section-header">
+                <h1>Mes Commandes</h1>
+            </div>
+            <div class="orders-list" id="ordersList">
+                <!-- Dynamically populated -->
+            </div>
+        </section>
+
+        <!-- Favorites Section -->
+        <section id="favorites" class="content-section">
+            <div class="section-header">
+                <h1>Mes Favoris</h1>
+            </div>
+            <div class="products-grid-full" id="favoritesGrid">
+                <!-- Dynamically populated -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeProductModal()">&times;</span>
+            <div class="modal-body" id="modalBody">
+                <!-- Product details populated here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/dashboard-client.js"></script>
+</body>
+</html>
