@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devenir Fournisseur - MarketPlace Pro</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/vendor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo" onclick="window.location.href='../index.html'">
+                <i class="fas fa-store"></i>
+                <span>MarketPlace Pro</span>
+            </div>
+            <div class="nav-buttons">
+                <button class="btn-login" onclick="goToLogin()">Connexion</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="vendor-register-hero">
+        <h1>Devenez Fournisseur</h1>
+        <p>Rejoignez notre communauté exclusive et augmentez vos ventes</p>
+    </section>
+
+    <div class="vendor-container">
+        <div class="vendor-steps">
+            <div class="step-indicator">
+                <div class="step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <p>Informations Personnelles</p>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-number">2</div>
+                    <p>Détails de la Boutique</p>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-number">3</div>
+                    <p>Vérification & Paiement</p>
+                </div>
+            </div>
+        </div>
+
+        <form id="vendorRegisterForm" class="vendor-form">
+            <!-- Step 1: Personal Information -->
+            <div class="form-step active" data-step="1">
+                <h2>Informations Personnelles</h2>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="vendorFirstName">
+                            <i class="fas fa-user"></i>
+                            Prénom
+                        </label>
+                        <input type="text" id="vendorFirstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="vendorLastName">
+                            <i class="fas fa-user"></i>
+                            Nom
+                        </label>
+                        <input type="text" id="vendorLastName" name="lastName" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="vendorEmail">
+                        <i class="fas fa-envelope"></i>
+                        Email
+                    </label>
+                    <input type="email" id="vendorEmail" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="vendorPhone">
+                        <i class="fas fa-phone"></i>
+                        Téléphone
+                    </label>
+                    <input type="tel" id="vendorPhone" name="phone" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="vendorIdType">
+                            <i class="fas fa-id-card"></i>
+                            Type de Pièce d'Identité
+                        </label>
+                        <select id="vendorIdType" name="idType" required>
+                            <option value="">Sélectionner...</option>
+                            <option value="passport">Passeport</option>
+                            <option value="national_id">Carte Nationale</option>
+                            <option value="drivers_license">Permis de Conduire</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="vendorIdNumber">
+                            <i class="fas fa-barcode"></i>
+                            Numéro de Pièce
+                        </label>
+                        <input type="text" id="vendorIdNumber" name="idNumber" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="vendorAddress">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Adresse
+                    </label>
+                    <input type="text" id="vendorAddress" name="address" required>
+                </div>
+            </div>
+
+            <!-- Step 2: Shop Details -->
+            <div class="form-step" data-step="2">
+                <h2>Détails de la Boutique</h2>
+
+                <div class="form-group">
+                    <label for="shopName">
+                        <i class="fas fa-store"></i>
+                        Nom de la Boutique
+                    </label>
+                    <input type="text" id="shopName" name="shopName" placeholder="Ex: Mon Magasin Electro" required>
+                    <small>Ce nom sera visible par tous les clients</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="shopDescription">
+                        <i class="fas fa-align-left"></i>
+                        Description de la Boutique
+                    </label>
+                    <textarea id="shopDescription" name="shopDescription" rows="4" placeholder="Décrivez votre boutique..." required></textarea>
+                    <small>Max 500 caractères</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="shopCategory">
+                        <i class="fas fa-list"></i>
+                        Catégorie Principale
+                    </label>
+                    <select id="shopCategory" name="shopCategory" required>
+                        <option value="">Sélectionner une catégorie...</option>
+                        <option value="electronics">Électronique</option>
+                        <option value="fashion">Mode et Vêtements</option>
+                        <option value="home">Maison et Décoration</option>
+                        <option value="food">Alimentation</option>
+                        <option value="beauty">Beauté et Hygiène</option>
+                        <option value="sports">Sports et Loisirs</option>
+                        <option value="books">Livres et Médias</option>
+                        <option value="other">Autre</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="bankName">
+                            <i class="fas fa-university"></i>
+                            Banque
+                        </label>
+                        <input type="text" id="bankName" name="bankName" placeholder="Ex: BMCE Bank" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="accountNumber">
+                            <i class="fas fa-credit-card"></i>
+                            Numéro de Compte
+                        </label>
+                        <input type="text" id="accountNumber" name="accountNumber" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="shopLogo" class="file-label">
+                        <i class="fas fa-image"></i>
+                        Logo de la Boutique
+                    </label>
+                    <input type="file" id="shopLogo" name="shopLogo" accept="image/*" required>
+                    <small>JPG, PNG. Max 5MB</small>
+                </div>
+            </div>
+
+            <!-- Step 3: Verification & Payment -->
+            <div class="form-step" data-step="3">
+                <h2>Vérification et Paiement</h2>
+
+                <div class="verification-info">
+                    <h3>
+                        <i class="fas fa-check-circle"></i>
+                        Résumé de Votre Inscription
+                    </h3>
+                    <div class="summary-item">
+                        <span>Nom de la Boutique:</span>
+                        <strong id="summaryShopName">-</strong>
+                    </div>
+                    <div class="summary-item">
+                        <span>Propriétaire:</span>
+                        <strong id="summaryOwner">-</strong>
+                    </div>
+                    <div class="summary-item">
+                        <span>Email:</span>
+                        <strong id="summaryEmail">-</strong>
+                    </div>
+                    <div class="summary-item">
+                        <span>Téléphone:</span>
+                        <strong id="summaryPhone">-</strong>
+                    </div>
+                </div>
+
+                <div class="payment-section">
+                    <h3>
+                        <i class="fas fa-dollar-sign"></i>
+                        Frais d'Inscription
+                    </h3>
+                    <div class="payment-info">
+                        <p>Frais uniques pour créer votre boutique</p>
+                        <div class="payment-amount">$20</div>
+                        <p class="payment-description">Vous recevrez une facture après confirmation</p>
+                    </div>
+                </div>
+
+                <div class="payment-methods">
+                    <h3>Méthode de Paiement</h3>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="paymentMethod" value="mobile_money" checked required>
+                            <div class="radio-content">
+                                <div class="radio-title">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    Mobile Money
+                                </div>
+                                <div class="radio-description">Orange Money, Wave, Free Money</div>
+                            </div>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="paymentMethod" value="card" required>
+                            <div class="radio-content">
+                                <div class="radio-title">
+                                    <i class="fas fa-credit-card"></i>
+                                    Carte Bancaire
+                                </div>
+                                <div class="radio-description">Visa, Mastercard</div>
+                            </div>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="paymentMethod" value="bank_transfer" required>
+                            <div class="radio-content">
+                                <div class="radio-title">
+                                    <i class="fas fa-exchange-alt"></i>
+                                    Virement Bancaire
+                                </div>
+                                <div class="radio-description">Transfer direct via votre banque</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <label class="terms-checkbox">
+                    <input type="checkbox" name="acceptTerms" required>
+                    <span>J'accepte les <a href="#">conditions d'utilisation</a>, la <a href="#">politique de confidentialité</a> et le <a href="#">contrat de fournisseur</a></span>
+                </label>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="form-navigation">
+                <button type="button" class="btn-prev" id="prevBtn" style="display:none;" onclick="prevStep()">
+                    <i class="fas fa-arrow-left"></i>
+                    Précédent
+                </button>
+                <button type="button" class="btn-next" id="nextBtn" onclick="nextStep()">
+                    Suivant
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                <button type="submit" class="btn-submit" id="submitBtn" style="display:none;">
+                    <i class="fas fa-check"></i>
+                    Créer ma Boutique
+                </button>
+            </div>
+
+            <span class="error-message" id="vendorError" style="text-align: center; display: block; margin-top: 1rem;"></span>
+        </form>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/vendor.js"></script>
+</body>
+</html>
