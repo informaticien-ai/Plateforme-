@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme Marketplace - Accueil</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-store"></i>
+                <span>MarketPlace Pro</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Accueil</a></li>
+                <li><a href="#features" class="nav-link">Caractéristiques</a></li>
+                <li><a href="#pricing" class="nav-link">Tarifs</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button class="btn-login" onclick="goToLogin()">Connexion</button>
+                <button class="btn-signup" onclick="goToSignup()">S'inscrire</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Vendez en Ligne en Toute Sécurité</h1>
+            <p>La plateforme de marketplace la plus fiable d'Afrique de l'Ouest</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="goToSignup()">Devenir Fournisseur</button>
+                <button class="btn-secondary" onclick="goToProducts()">Découvrir les Produits</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="./images/hero-illustration.svg" alt="Illustration" />
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2>Pourquoi Choisir Notre Plateforme ?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Sécurité Garantie</h3>
+                <p>Les clients paient via notre plateforme, pas directement aux fournisseurs. Vérification de la marchandise avant paiement.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Croissance Assurée</h3>
+                <p>Marketing géré par la plateforme. Accès à des milliers de clients sans effort marketing.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Concurrence Contrôlée</h3>
+                <p>Nombre limité de fournisseurs. Moins de concurrence, plus d'opportunités de ventes.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>Support Dédié</h3>
+                <p>Assistance et guide gratuits pour optimiser vos ventes. Service de gestion disponible.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>Surveillance Transparente</h3>
+                <p>Toutes les conversations sont supervisées pour garantir la qualité du service.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h3>Classement des Vendeurs</h3>
+                <p>Système de classement transparent. Les meilleurs vendeurs gagnent plus de visibilité.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <h2>Nos Tarifs</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Création de Boutique</h3>
+                <div class="price">$20</div>
+                <p class="price-description">Frais uniques pour lancer votre boutique</p>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> Boutique de base</li>
+                    <li><i class="fas fa-check"></i> 100 produits</li>
+                    <li><i class="fas fa-check"></i> Gestion clients</li>
+                    <li><i class="fas fa-check"></i> Support basique</li>
+                </ul>
+            </div>
+            <div class="pricing-card pricing-card-featured">
+                <div class="badge">RECOMMANDÉ</div>
+                <h3>Renouvellement (6 mois)</h3>
+                <div class="price">$10</div>
+                <p class="price-description">Frais trimestriels après 6 mois</p>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> Maintien de la boutique</li>
+                    <li><i class="fas fa-check"></i> Accès complet</li>
+                    <li><i class="fas fa-check"></i> Support prioritaire</li>
+                    <li><i class="fas fa-check"></i> Sauvegardes régulières</li>
+                </ul>
+            </div>
+            <div class="pricing-card">
+                <h3>Visibilité Constante</h3>
+                <div class="price">$5-15</div>
+                <p class="price-description">par mois (optionnel)</p>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> Première position</li>
+                    <li><i class="fas fa-check"></i> Publicité premium</li>
+                    <li><i class="fas fa-check"></i> Plus de visibilité</li>
+                    <li><i class="fas fa-check"></i> Analytics détaillés</li>
+                </ul>
+            </div>
+        </div>
+        <div class="commission-info">
+            <h3>Commission de la Plateforme</h3>
+            <p>5-7% par transaction. Exemple : Pour une vente de 100$, vous gagnez 93-95$.</p>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <h2>Comment Ça Marche ?</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Client Commande</h3>
+                <p>Le client choisit un produit et paie via la plateforme</p>
+            </div>
+            <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Fournisseur Livre</h3>
+                <p>Le fournisseur dépose le produit dans notre agence</p>
+            </div>
+            <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Vérification</h3>
+                <p>Le client vérifie la qualité de la marchandise</p>
+            </div>
+            <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Paiement</h3>
+                <p>Après approbation, le fournisseur reçoit son paiement</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <h2>Prêt à Démarrer ?</h2>
+        <p>Rejoignez les meilleurs fournisseurs de la plateforme dès maintenant</p>
+        <button class="btn-primary" onclick="goToSignup()">S'inscrire Maintenant</button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>À Propos</h4>
+                <ul>
+                    <li><a href="#">Qui sommes-nous</a></li>
+                    <li><a href="#">Notre mission</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Centre d'aide</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Légal</h4>
+                <ul>
+                    <li><a href="#">Conditions</a></li>
+                    <li><a href="#">Confidentialité</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Suivez-nous</h4>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MarketPlace Pro. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
